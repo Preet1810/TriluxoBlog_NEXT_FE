@@ -1,4 +1,4 @@
-import { baseUrl, httpservice } from "../httpsService";
+import { baseUrl, httpservice } from "../httpservice";
 
 export async function getAllBlogs() {
     return await httpservice.get(baseUrl+`/blogs`)
