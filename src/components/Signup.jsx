@@ -48,8 +48,10 @@ const SignupLogin=() => {
                 values
             );
             try {
+                setLoading(true);
                 handleCreateAccount(values)
                 action.resetForm()
+                setLoading(false);
             } catch (error) {
                 setLoading(false);
                 alert("Error While Creating Account")

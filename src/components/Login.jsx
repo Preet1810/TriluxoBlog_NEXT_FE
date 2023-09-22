@@ -48,7 +48,7 @@ const Login=() => {
                 values
             );
             try {
-
+                setLoading(true);
                 handleLogin(values)
                 action.resetForm()
                 setLoading(false);

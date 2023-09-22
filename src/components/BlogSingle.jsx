@@ -9,7 +9,6 @@ import { UserAuth } from '@/context/AuthContext';
 import { postComment, getAllComments } from '@/services/Data/comments'
 import { useRouter } from 'next/navigation'
 import './BlogSingle.css'
-import { data } from 'autoprefixer'
 const BlogSingle=() => {
     const router=useRouter();
     const { user }=UserAuth();
