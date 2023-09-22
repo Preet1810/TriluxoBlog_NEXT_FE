@@ -4,7 +4,7 @@ import "./globals.css";
 import { AuthContextProvider, UserAuth } from "@/context/AuthContext";
 import { useRouter, usePathname } from 'next/navigation';
 import Navbar from "@/components/Navbar";
-import { auth } from "@/fireBase";
+import { auth } from "@/app/fireBase";
 export default function RootLayout({ children }) {
   const [user, setUser]=useState(null);
 
