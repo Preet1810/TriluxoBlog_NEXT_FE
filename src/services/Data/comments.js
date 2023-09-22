@@ -1,4 +1,4 @@
-import { baseUrl, httpservice } from "../httpService";
+import { baseUrl, httpservice } from "../httpsService";
 
 
 export async function getAllComments(id) {
