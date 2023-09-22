@@ -1,7 +1,6 @@
 import axios from "axios";
-// import TokenHelper from "./helper/tokenHelper";
-export const baseUrl="http://localhost:3001";
-// export const baseUrl="https://avaas-backend.onrender.com";
+// export const baseUrl="http://localhost:3001";
+export const baseUrl="https://triluxoblogbe.onrender.com";
 
 
 axios.interceptors.request.use(async (request) => {

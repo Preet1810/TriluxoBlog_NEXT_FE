@@ -28,7 +28,7 @@ const CreateBlog=() => {
         data.set('file', files[0]);
         ev.preventDefault();
         console.log(data);
-        const response=await fetch('http://localhost:3001/blogs/create', {
+        const response=await fetch('https://triluxoblogbe.onrender.com/blogs/create', {
             method: 'POST',
             body: data,
             credentials: 'include',
