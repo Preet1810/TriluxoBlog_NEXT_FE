@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import 'react-quill/dist/quill.snow.css';
-import Editor from './Editor';
+// import Editor from './Editor';
 import { useRouter } from 'next/navigation';
 import { UserAuth } from '../context/AuthContext'
 
@@ -28,6 +27,7 @@ const CreateBlog=() => {
         data.set('userId', user.uid);
         data.set('file', files[0]);
         ev.preventDefault();
+        console.log(data);
         const response=await fetch('http://localhost:3001/blogs/create', {
             method: 'POST',
             body: data,
@@ -47,7 +47,7 @@ const CreateBlog=() => {
             ):(
                 <>
                     <h1 className='text-[48px] font-[600] text-[#043133] text-center '>Create New Blog</h1>
-                    <form onSubmit={createNewPost} className="max-w-2xl mx-auto bg-slate-200 p-5 rounded-2xl">
+                    <form onSubmit={createNewPost} className="w-[40rem] mx-auto bg-slate-200 py-5 px-[100px]  rounded-2xl">
                         <div className="mb-4">
                             <label htmlFor="title" className="block text-gray-600">Title</label>
                             <input
@@ -74,9 +74,9 @@ const CreateBlog=() => {
                             onChange={ev => setFiles(ev.target.files)} />
                         <div className="mb-4">
                             <label className="block text-gray-600">Content</label>
-                            <Editor value={content} onChange={setContent} />
+                            <textarea value={content} onChange={(e) => setContent(e.target.value)} name="" id="" className='w-full' cols="" rows="10"></textarea>
                         </div>
-                        <div className="mt-16">
+                        <div className="mt-4">
                             <button
                                 type="submit"
                                 className="w-[100px] h-[50px] text-white text-[15px] font-[500] bg-[#007074] rounded-2xl"

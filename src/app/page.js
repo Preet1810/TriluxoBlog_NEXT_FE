@@ -8,7 +8,7 @@ const Home=() => {
         <div className='px-20 py-10 flex flex-col gap-y-6'>
             <div>
                 <button
-                    onClick={() => router.replace("/newblog")}
+                    onClick={() => router.replace("/createblog")}
                     className='w-[140px] h-[50px] text-white text-[20px] font-[500] bg-[#007074] rounded-2xl'>Create Blog</button>
             </div>
             <div className='flex justify-center'>
