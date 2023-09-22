@@ -1,7 +1,5 @@
-'use client'
-
-import React from 'react'
-import ReactQuill from "react-quill";
+import React from 'react';
+import ReactQuill from 'react-quill';
 
 const Editor=({ value, onChange }) => {
     const modules={
@@ -18,7 +16,9 @@ const Editor=({ value, onChange }) => {
             ['clean'],
         ],
     };
-    if (document) {
+
+    // Check if the code is running in a browser environment
+    if (typeof window!=='undefined'&&window.document) {
         return (
             <div className="">
                 <ReactQuill
@@ -26,12 +26,13 @@ const Editor=({ value, onChange }) => {
                     value={value}
                     theme={'snow'}
                     onChange={onChange}
-                    modules={modules} />
+                    modules={modules}
+                />
             </div>
         );
     } else {
-        return <textarea value={value} />
+        return <textarea value={value} />;
     }
-}
+};
 
-export default Editor
+export default Editor;
