@@ -3,11 +3,14 @@
 import React from 'react'
 import CreateBlog from '@/components/CreateBlog'
 const page=() => {
-    return (
-        <div>
+
+    if (typeof window!=='undefined'&&window.document) {
+        return (
             <CreateBlog />
-        </div>
-    )
+        )
+    } else {
+        return null;
+    }
 }
 
 export default page

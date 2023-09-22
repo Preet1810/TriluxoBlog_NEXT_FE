@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactQuill from 'react-quill';
-
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+import ReactQuill from 'react-quill'
 const Editor=({ value, onChange }) => {
     const modules={
         toolbar: [
@@ -18,21 +18,17 @@ const Editor=({ value, onChange }) => {
     };
 
     // Check if the code is running in a browser environment
-    if (typeof window!=='undefined'&&window.document) {
-        return (
-            <div className="">
-                <ReactQuill
-                    className='h-[6rem]'
-                    value={value}
-                    theme={'snow'}
-                    onChange={onChange}
-                    modules={modules}
-                />
-            </div>
-        );
-    } else {
-        return <textarea value={value} />;
-    }
+    return (
+        <div className="">
+            <ReactQuill
+                className='h-[6rem]'
+                value={value}
+                theme={'snow'}
+                onChange={onChange}
+                modules={modules}
+            />
+        </div>
+    );
 };
 
 export default Editor;
