@@ -23,14 +23,17 @@ const AllBlogs=() => {
                 <h1 className='text-black text-center font-[700] text-[44px] '>All Blogs</h1>
             </div>
             <div className='grid grid-cols-2 gap-x-6 gap-y-10'>
-                {blogs?.map((blog, index) => (
-                    <SingleBlog
-                        id={blog._id}
-                        key={index}
-                        imgsrc={blog.image[0]}
-                        summary={blog.summary}
-                    />
-                ))}
+                {blogs
+                    ?.slice()
+                    .reverse()
+                    .map((blog, index) => (
+                        <SingleBlog
+                            id={blog._id}
+                            key={index}
+                            imgsrc={blog.image[0]}
+                            summary={blog.summary}
+                        />
+                    ))}
             </div>
         </div>
     )

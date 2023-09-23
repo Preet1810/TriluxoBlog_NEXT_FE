@@ -11,7 +11,7 @@ import Image from 'next/image'
 const Login=() => {
     const router=useRouter();
     const { emailPasswordSignIn }=UserAuth();
-
+    const [respose, setrespose]=useState()
     const [loading, setLoading]=useState(false);
 
 
@@ -26,10 +26,8 @@ const Login=() => {
         setLoading(true)
         try {
             await emailPasswordSignIn(data)
-            setLoading(false)
-            router.replace("/")
         } catch (error) {
-            console.log("Signup ERROR:", error)
+            alert(error)
         }
     };
 
@@ -62,11 +60,9 @@ const Login=() => {
     });
 
 
-    // useEffect(() => {
-    //     if (user) {
-    //         router.replace("/")
-    //     }
-    // }, [user])
+    useEffect(() => {
+        console.log("respo:", respose)
+    }, [respose])
 
 
     return (
